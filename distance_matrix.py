@@ -49,7 +49,7 @@ def send_request(origin, destination):
     def build_str(places):
         return '|place_id:'.join(places)  # Build a pipe-separated string of addresses
 
-    api = GooglePlaces("AIzaSyDO40jM1KDpPQWgkN_THcQtwWYfWkHGvQU")
+    api = GooglePlaces(<apiKey>)
     origin_str = build_str(origin)
     destination_str = build_str(destination)
     response = api.distance_matrix(origin_str, destination_str)
