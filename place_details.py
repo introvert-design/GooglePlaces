@@ -1,10 +1,21 @@
+import os
+from dotenv import load_dotenv
+
 from data import create_data
 from google_places import GooglePlaces
 
-API_KEY = "AIzaSyBCBBWruaj8M_JC-kfjWEhQZp7ZgdfWw5g"
+load_dotenv()
+
+API_KEY = os.getenv('API_KEY')
 
 
 def places():
+    """
+    Sends the request to the Place Api and gets the place details.
+
+    :return: Place details list.
+    :rtype: list[dict]
+    """
     place_ids = create_data()
     fields = ['formatted_address',
               'geometry',

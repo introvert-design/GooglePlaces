@@ -1,7 +1,12 @@
+import os
+from dotenv import load_dotenv
+
 from data import create_data
 from google_places import GooglePlaces
 
-API_KEY = "AIzaSyBCBBWruaj8M_JC-kfjWEhQZp7ZgdfWw5g"
+load_dotenv()
+
+API_KEY = os.getenv('API_KEY')
 
 
 def build_distance_matrix(response):
