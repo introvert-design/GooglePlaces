@@ -1,6 +1,5 @@
 import json
 import requests
-import populartimes as pt
 
 
 class GooglePlaces(object):
@@ -53,7 +52,3 @@ class GooglePlaces(object):
         res = requests.get(url, params=params)
         result = json.loads(res.content)
         return result
-
-    def time_spent(self, place_id):
-        result = pt.get_id(self.api_key, place_id)
-        return result['time_spent']

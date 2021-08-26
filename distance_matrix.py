@@ -1,4 +1,4 @@
-from google_places.data import create_data
+from data import create_data
 from google_places import GooglePlaces
 
 API_KEY = "AIzaSyBCBBWruaj8M_JC-kfjWEhQZp7ZgdfWw5g"
@@ -160,15 +160,15 @@ def create_distance_matrix(place_ids):
 ########
 # Main #
 ########
-def main():
+def distance():
     """
     Entry point of the program
     """
     place_ids = create_data()  # Create the data.
     distance_matrix = create_distance_matrix(place_ids)
 
-    print(len(distance_matrix))
+    return distance_matrix
 
 
 if __name__ == '__main__':
-    main()
+    distance()
